@@ -1,0 +1,75 @@
+{iHeader}
+
+
+<p class="title">Sent email messages</p>
+
+
+<!-- begin_emails -->
+
+<table class="Form" cellspacing="0" cellpadding="0" border="0">
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;"><!-- begin_emails_pager -->
+<!-- begin_emails_first --><a href="{url}">First</a> <!-- end_emails_first -->
+<!-- begin_emails_prev --><a href="{url}">Prev.</a> <!-- end_emails_prev -->
+<!-- begin_emails_page -->
+<!-- begin_emails_link --><a href="{url}">{page}</a> <!-- end_emails_link -->
+<!-- begin_emails_curpage --><b>{page}</b> <!-- end_emails_curpage -->
+<!-- end_emails_page -->
+<!-- begin_emails_next --><a href="{url}">Next</a> <!-- end_emails_next -->
+<!-- begin_emails_last --><a href="{url}">Last</a> <!-- end_emails_last -->
+<!-- end_emails_pager --></td>
+		</TR>
+	</table>
+</td>
+</tr>
+<tr class="Caption">
+<td>
+	<!-- begin_emails_sort_sentDate --><a href="{url}">Date sent</a> 
+	<!-- begin_emails_asc_sentDate --><img border="0" src="{img}/asc.gif" /><!-- end_emails_asc_sentDate -->
+	<!-- begin_emails_desc_sentDate --><img border="0" src="{img}/desc.gif" /><!-- end_emails_desc_sentDate --><!-- end_emails_sort_sentDate --></td> 
+<td>
+	<!-- begin_emails_sort_subject --><a href="{url}">Subject</a> 
+	<!-- begin_emails_asc_subject --><img border="0" src="{img}/asc.gif" /><!-- end_emails_asc_subject -->
+	<!-- begin_emails_desc_subject --><img border="0" src="{img}/desc.gif" /><!-- end_emails_desc_subject --><!-- end_emails_sort_subject --></td> 
+<td>
+	<!-- begin_emails_sort_nSent --><a href="{url}">N sent</a> 
+	<!-- begin_emails_asc_nSent --><img border="0" src="{img}/asc.gif" /><!-- end_emails_asc_nSent -->
+	<!-- begin_emails_desc_nSent --><img border="0" src="{img}/desc.gif" /><!-- end_emails_desc_nSent --><!-- end_emails_sort_nSent --></td> 
+<td>
+	<!-- begin_emails_sort_nOpensP --><a href="{url}">N opens</a> 
+	<!-- begin_emails_asc_nOpensP --><img border="0" src="{img}/asc.gif" /><!-- end_emails_asc_nOpensP -->
+	<!-- begin_emails_desc_nOpensP --><img border="0" src="{img}/desc.gif" /><!-- end_emails_desc_nOpensP --><!-- end_emails_sort_nOpensP --></td> 
+</tr>
+
+<!-- begin_emails_item -->
+<tr class="Row">
+<td>{sentDate}&nbsp;</td>
+<td>{subject}&nbsp;</td>
+<td>{nSent}&nbsp;</td>
+<td>{nOpensP}% ({nOpens})&nbsp;</td>
+</tr>
+<!-- end_emails_item -->
+
+<!-- begin_emails_noitems -->
+<tr class="NoRecords">
+<td colspan="18">No records</td>
+</tr>
+<!-- end_emails_noitems -->
+<tr class="Info">
+<td colspan="16">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;">{pager2}</td>
+		</TR>
+	</table>
+</td>
+</tr>
+</table>
+
+<!-- end_emails -->
+
+
+{iFooter}

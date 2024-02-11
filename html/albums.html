@@ -1,0 +1,99 @@
+{iHeader}
+
+<table border="0">
+<tr>
+<td valign="top">
+<a href="index.php"><img src="{img}/logo.jpg" border="0"></a>
+</td>
+<td valign="top" width="50">&nbsp;</td>
+
+<td valign="top" >
+
+
+<br>
+<div class="Title">Gallery</div>
+<br>
+
+<p align="center">
+
+<!-- begin_albums -->
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr>
+<td>
+        <table cellspacing="0" cellpadding="0" border="0" class="Header">
+          <tr>
+            <td class="HeaderLeft" style="background-image: url('{img}/HeaderLeft.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+            <th>Albums</th>
+            <td class="HeaderRight" style="background-image: url('{img}/HeaderRight.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+          </tr>
+        </table>
+<table class="Form" cellspacing="0" cellpadding="0" border="0">
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;"><!-- begin_albums_pager -->
+<!-- begin_albums_first --><a href="{url}">First</a> <!-- end_albums_first -->
+<!-- begin_albums_prev --><a href="{url}">Prev.</a> <!-- end_albums_prev -->
+<!-- begin_albums_page -->
+<!-- begin_albums_link --><a href="{url}">{page}</a> <!-- end_albums_link -->
+<!-- begin_albums_curpage --><b>{page}</b> <!-- end_albums_curpage -->
+<!-- end_albums_page -->
+<!-- begin_albums_next --><a href="{url}">Next</a> <!-- end_albums_next -->
+<!-- begin_albums_last --><a href="{url}">Last</a> <!-- end_albums_last -->
+<!-- end_albums_pager --></td>
+		</TR>
+	</table>
+</td>
+</tr>
+
+<!-- begin_albums_begin -->
+<tr class="Row">
+<!-- end_albums_begin -->
+<!-- begin_albums_item -->
+<td align="center" nowrap>
+	<a href="album.php?albumId={albumId}&{params}"><img border="0" alt="{title}" src="pics/{albumId}/small/{sFile}"></a><br />
+	{title}<br />
+</td>
+<!-- begin_albums_newline -->
+</tr><tr class="Row">
+<!-- end_albums_newline -->
+<!-- end_albums_item -->
+
+<!-- begin_albums_end -->
+<!-- begin_albums_close -->
+<td colspan="{lostCells}">&nbsp;</td>
+<!-- end_albums_close -->
+</tr>
+<!-- end_albums_end -->
+
+<!-- begin_albums_noitems -->
+<tr class="NoRecords">
+<td colspan="18">No pictures</td>
+</tr>
+<!-- end_albums_noitems -->
+
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;">{pager2}</td>
+		</TR>
+	</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- end_albums -->
+
+</p>
+
+</td>
+</tr>
+</table>
+
+{iFooter}

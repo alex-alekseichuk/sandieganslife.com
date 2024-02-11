@@ -1,0 +1,161 @@
+{iHeader}
+
+<script language="JavaScript" type="text/javascript" src="{img}/check.js"></script>
+<script src="{img}/AC_QuickTime.js" language="JavaScript" type="text/javascript"></script>
+
+
+<!-- begin_video -->
+
+<p class="title">
+Video :
+<!-- begin_video_bHeadNew -->New video<!-- end_video_bHeadNew -->
+<!-- begin_video_bHeadExisted -->Video #{videoId}<!-- end_video_bHeadExisted -->
+</p>
+
+<p align="center">
+
+<table border="0"><tr>
+
+<!-- begin_viewer -->
+
+<td valign="top" nowrap="nowrap">
+&nbsp;
+</td>
+
+<td valign="top" nowrap="nowrap">
+<img src="../video/thumbs/{sPic}" border="0">
+</td>
+
+<tr></tr>
+
+<td valign="top" nowrap="nowrap" rowspan="2">
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td>
+        <table cellspacing="0" cellpadding="0" border="0" class="Header">
+          <tr>
+            <td class="HeaderLeft" style="background-image: url('{img}/HeaderLeft.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+            <th>View</th>
+            <td class="HeaderRight" style="background-image: url('{img}/HeaderRight.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+          </tr>
+        </table>
+<table class="Form" cellspacing="0" cellpadding="0">
+<tr class="Info"><td >
+
+<!-- begin_our -->
+<script language="JavaScript" type="text/javascript" >
+<!--
+	QT_WriteOBJECT("../video/{sFile}", "{width}", "{height}", "",
+			"controller", "true",
+			"autoplay","false"
+ 	);
+//-->
+</script>
+<noscript>
+	<embed src="../video/{sFile}?controller=true&autoplay=false" width="{width}" height="{height}" align="left"></embed>
+</noscript>
+<!-- end_our -->
+
+<!-- begin_youtube -->
+<object width="{width}" height="{height}">
+	<param name="movie" value="{link}"></param>
+	<param name="wmode" value="transparent"></param>
+	<embed src="{link}" type="application/x-shockwave-flash" wmode="transparent" width="{width}" height="{height}"></embed>
+</object>
+<!-- end_youtube -->
+
+</td></tr>
+</table>
+</td> 
+</tr>
+</table>
+
+
+
+</td>
+
+<!-- end_viewer -->
+
+<td valign="top">
+<script language="JavaScript">
+<!--
+function OnDelete()
+{
+	if (confirm("Are you sure you want to delete this video?"))
+	{
+		location='video.php?cmd=video_delete&{params}';
+	}
+}
+function OnSubmit()
+{
+	var sError = "";
+
+	{checks}
+
+	if (sError) {
+		alert("Warning:\n" + sError);
+		return false;
+	} else {
+		return true;
+	}
+}
+//-->
+</script>
+
+
+
+<table cellspacing="0" cellpadding="0" width="300" border="0">
+<tr>
+<td>
+<form name="video" action="video.php?{params}" method="post" enctype="multipart/form-data" onSubmit="return OnSubmit();">
+        <table cellspacing="0" cellpadding="0" border="0" class="Header">
+          <tr>
+            <td class="HeaderLeft" style="background-image: url('{img}/HeaderLeft.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+            <th>Video</th>
+            <td class="HeaderRight" style="background-image: url('{img}/HeaderRight.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+          </tr>
+        </table>
+<table class="Form" cellspacing="0" cellpadding="0">
+<input type="hidden" name="cmd" value="video_{cmd}">
+
+<!-- begin_video_bMessage -->
+<tr class="Info"><td colspan="2">
+{sMessage}&nbsp;
+</td></tr>
+<!-- end_video_bMessage -->
+<tr class="Controls"><th>Title:</th><td><input name="title" value="{title}"></td></tr>
+
+<input type="hidden" name="MAX_FILE_SIZE" value="10485760">
+<tr class="Controls"><th>Video:</th><td nowrap="nowrap"><input type="file" name="sFile" > &nbsp; (.mov)</td></tr>
+<tr class="Controls"><th>Thumb.:</th><td nowrap="nowrap"><input type="file" name="sPic" > &nbsp; (.jpg)</td></tr>
+
+<tr class="Controls"><th>Width:</th><td><input name="width" value="{width}"></td></tr>
+<tr class="Controls"><th>Height:</th><td><input name="height" value="{height}"></td></tr>
+<tr class="Controls"><th>Link:</th><td><input name="link" value="{link}"></td></tr>
+
+<tr class="Footer"><td colspan="2">
+<!-- begin_video_bInsert --><input type="submit" value="Add"><!-- end_video_bInsert -->
+<!-- begin_video_bUpdate --><input type="submit" value="Update"><!-- end_video_bUpdate -->
+<input type="button" value="Cancel" onClick="location='videos.php?{params}';">
+<!-- begin_video_bDelete -->
+<input type="button" value="Delete" onClick="OnDelete();">
+<!-- end_video_bDelete -->
+</td></tr>
+</table>
+</form>
+</td> 
+</tr>
+</table>
+
+
+
+
+</td></tr></table>
+
+</p>
+
+<!-- end_video -->
+
+
+{iFooter}

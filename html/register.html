@@ -1,0 +1,145 @@
+{iHeader}
+
+<table border="0">
+<tr>
+<td valign="top">
+<a href="index.php"><img src="{img}/logo.jpg" border="0"></a>
+</td>
+<td valign="top" width="50">&nbsp;</td>
+
+<td valign="top">
+
+<!-- begin_user -->
+
+<script language="JavaScript" type="text/javascript" src="{img}/check.js"></script>
+<script language="JavaScript">
+<!--
+function OnSubmit()
+{
+	var sError = "";
+
+	{checks}
+
+	if (document.forms["user"].passwd.value != document.forms["user"].passwd2.value)
+		sError += "\tSecond password is not the same\n";
+
+	if (sError) {
+		alert("Warnign:\n" + sError);
+		return false;
+	} else {
+		return true;
+	}
+}
+//-->
+</script>
+
+<br>
+<div class="Title">Registration form</div>
+<br>
+Could you please fill this form below to create your account.<br>
+All fields are required.
+
+<br>
+<br>
+
+<table border="0">
+<form name="user" action="register.php" method="post" onSubmit="return OnSubmit();">
+<input type="hidden" name="cmd" value="user_insert">
+
+<!-- begin_user_bMessage -->
+<tr>
+<td colspan="2"><span style="color: red;">{sMessage}</span>&nbsp;</td>
+</td>
+</tr>
+<!-- end_user_bMessage -->
+
+<tr>
+<td>E-mail</td>
+<td><input type="text" name="email" value="{email}"></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="password" name="passwd" value=""></td>
+
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password" name="passwd2" value="">
+again, for verification
+</td>
+</tr>
+
+<tr>
+<td>First Name</td>
+<td><input type="text" name="fName" value="{fName}"></td>
+</tr>
+
+<tr>
+<td>Last Name</td>
+<td><input type="text" name="lName" value="{lName}"></td>
+</tr>
+
+<tr>
+<td>Cell Phone</td>
+<td><input type="text" name="cell" value="{cell}"></td>
+</tr>
+
+<tr>
+<td>Birthday</td>
+<td>
+<select name="birthMonth"><option value="">[Month]</option>{birthMonthOptions}</select>
+/
+<select name="birthDay"><option value="">[Day]</option>{birthDayOptions}</select>
+/
+<select name="birthYear"><option value="">[Year]</option>{birthYearOptions}</select>
+</td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gender" value="M" {gender_M}> Male
+&nbsp;&nbsp;
+<input type="radio" name="gender" value="F" {gender_F}> Female
+</td>
+</tr>
+
+<tr>
+<td>Address</td>
+<td><input type="text" name="address" value="{address}"></td>
+</tr>
+
+<tr>
+<td>City</td>
+<td><input type="text" name="city" value="{city}"></td>
+</tr>
+
+<tr>
+<td>State</td>
+<td><select name="iState"><option value="">[State]</option>{iStateOptions}</select></td>
+</tr>
+
+<tr>
+<td>ZIP</td>
+<td><input type="text" name="zip" value="{zip}"></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<input type="submit" value="Register">
+<input type="reset" value="Clear">
+</td>
+</tr>
+
+</form>
+</table>
+
+<!-- end_user -->
+
+</td>
+</tr>
+</table>
+
+
+{iFooter}

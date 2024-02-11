@@ -1,0 +1,24 @@
+{iHeader}
+
+<p class="title">Send email message</p>
+
+<div style="color: red;" align="center">{sMessage}</div>
+
+<table border="0" align="center">
+<form action="email.php" method="post">
+<input type="hidden" name="cmd" value="send">
+<tr><td>&nbsp;</td><td><input type="checkbox" name="toUsers" value="1" /> To registered users ({nUsers})</td></tr>
+<tr><td>&nbsp;</td><td><input type="checkbox" name="toEmails" value="1" /> To addresses of the list <select name="catId"><option value="0">[All] ({nEmails})</a>{catIdOptions}</select></td></tr>
+<tr><td>&nbsp;</td><td><input type="checkbox" name="toTest" value="1" /> To <input type="text" name="emailTest" value="" /></td></tr>
+<tr><td>From</td><td><input type="text" name="from" value="{from}" style="width: 300px;"></td></tr>
+<tr><td>Subject</td><td><input type="text" name="subject" style="width: 300px;"></td></tr>
+<tr><td>HTML Body</td><td><textarea name="body" rows="7" cols="40"></textarea></td></tr>
+<tr><td>&nbsp;</td>
+<td >
+<input type="submit" value="Send">
+<input type="Reset" value="Clear">
+</td></tr>
+</form>
+</table>
+
+{iFooter}

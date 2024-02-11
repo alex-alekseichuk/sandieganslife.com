@@ -1,0 +1,112 @@
+{iHeader}
+
+<script language="JavaScript" type="text/javascript" src="{img}/check.js"></script>
+
+
+<p class="title">
+Video
+</p>
+
+<p align="center">
+
+
+
+<!-- begin_videos -->
+
+
+<script language="JavaScript">
+<!--
+function OnDelete(videoId)
+{
+	if (confirm("Are you sure you want to delete this video?"))
+	{
+		location='video.php?cmd=video_delete&videoId=' + videoId + '&{params}';
+	}
+}
+function OnSync()
+{
+	if (confirm("Are you sure you want to syncronize new video uploaded via FTP?"))
+	{
+		location='videos.php?cmd=sync&{params}';
+	}
+}
+//-->
+</script>
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td>
+<table class="Form" cellspacing="0" cellpadding="0" border="0">
+
+<tr class="Info">
+<td colspan="18">
+<a class="Link" href="video.php?{params}"><img src="{img}/bul.gif" border="0">Upload new video</a>
+&nbsp;&nbsp;&nbsp;
+<a class="Link" href="videos.php?cmd=sync&{params}"><img src="{img}/bul.gif" border="0">Sync. FTP</a>
+</td>
+</tr>
+
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;"><!-- begin_videos_pager -->
+<!-- begin_videos_first --><a href="{url}">First</a> <!-- end_videos_first -->
+<!-- begin_videos_prev --><a href="{url}">Prev.</a> <!-- end_videos_prev -->
+<!-- begin_videos_page -->
+<!-- begin_videos_link --><a href="{url}">{page}</a> <!-- end_videos_link -->
+<!-- begin_videos_curpage --><b>{page}</b> <!-- end_videos_curpage -->
+<!-- end_videos_page -->
+<!-- begin_videos_next --><a href="{url}">Next</a> <!-- end_videos_next -->
+<!-- begin_videos_last --><a href="{url}">Last</a> <!-- end_videos_last -->
+<!-- end_videos_pager --></td>
+		</TR>
+	</table>
+</td>
+</tr>
+
+<!-- begin_videos_item -->
+<tr class="Row">
+<td align="center" valign="top" nowrap>
+	<a href="video.php?videoId={videoId}&{params}"><img border="0" alt="{title}" src="../video/thumbs/{sPic}" /></a>
+	</td><td align="left" valign="top" nowrap >
+	{title}<br />{width} x {height}<br />
+	<!-- begin_videos_bLink --><a href="{link}" target="_blank"><img src="{img}/bul.gif" border="0">link</a><br /><!-- end_videos_bLink -->
+	<a href="video.php?videoId={videoId}&{params}">edit</a>
+	<a href="javascript:OnDelete({videoId});">delete</a>
+	&nbsp;
+	<a href="videos.php?cmd=video_up&videoId={videoId}&{params}"><img src="{img}/asc.gif" border="0" /></a>
+	<a href="videos.php?cmd=video_down&videoId={videoId}&{params}"><img src="{img}/desc.gif" border="0" /></a>
+</td>
+</tr>
+<!-- end_videos_item -->
+
+<!-- begin_videos_noitems -->
+<tr class="NoRecords">
+<td colspan="18">No video</td>
+</tr>
+<!-- end_videos_noitems -->
+
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;">{pager2}</td>
+		</TR>
+	</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- end_videos -->
+
+
+
+</p>
+
+
+
+{iFooter}

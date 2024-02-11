@@ -1,0 +1,64 @@
+{iHeader}
+
+<table border="0">
+<tr>
+<td valign="top">
+<a href="index.php"><img src="{img}/logo.jpg" border="0"></a>
+</td>
+<td valign="top" width="50">&nbsp;</td>
+
+<td valign="top">
+
+<!-- begin_fLogin -->
+
+<br>
+<div class="Title">Forgot the password?</div>
+<br>
+
+
+<a class="menu" href="register.php?{params}"><img alt="" src="{img}/bul.gif" border="0">REGISTER</a>
+&nbsp;&nbsp;&nbsp;
+<a class="menu" href="login.php?{params}"><img alt="" src="{img}/bul.gif" border="0">LOGIN</a>
+
+<br>
+<br>
+
+
+Provide your register email here and we send you the password.
+
+<br>
+<br>
+
+<table border="0">
+<form name="login" action="forgot.php" method="post" >
+<input type="hidden" name="cmd" value="login">
+
+<!-- begin_fLogin_bMessage -->
+<tr>
+<td colspan="2"><span style="color: red;">{sMessage}</span>&nbsp;</td>
+</td>
+</tr>
+<!-- end_fLogin_bMessage -->
+
+<tr>
+<td>E-mail</td>
+<td><input type="text" name="email" value="{email}"></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<input type="submit" value="Send password">
+</td>
+</tr>
+
+</form>
+</table>
+
+<!-- end_fLogin -->
+
+</td>
+</tr>
+</table>
+
+
+{iFooter}

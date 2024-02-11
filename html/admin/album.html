@@ -1,0 +1,257 @@
+{iHeader}
+
+<script language="JavaScript" type="text/javascript" src="{img}/check.js"></script>
+
+
+<!-- begin_album -->
+
+<p class="title">
+Gallery :
+<!-- begin_album_bHeadNew -->New album<!-- end_album_bHeadNew -->
+<!-- begin_album_bHeadExisted -->Album #{albumId}<!-- end_album_bHeadExisted -->
+</p>
+
+<p align="center">
+
+<table border="0"><tr><td valign="top">
+
+
+<script language="JavaScript">
+<!--
+function OnDelete()
+{
+	if (confirm("Are you sure you want to delete this album and all its pictures?"))
+	{
+		location='album.php?cmd=album_delete&{params}';
+	}
+}
+function OnSync()
+{
+	if (confirm("Are you sure you want to syncronize this album for new pictures uploaded via FTP?"))
+	{
+		location='album.php?cmd=sync&{params}';
+	}
+}
+function OnSubmit()
+{
+	var sError = "";
+
+	{checks}
+
+	if (sError) {
+		alert("Warning:\n" + sError);
+		return false;
+	} else {
+		return true;
+	}
+}
+//-->
+</script>
+
+
+
+<table cellspacing="0" cellpadding="0" width="300" border="0">
+<tr>
+<td>
+<form name="album" action="album.php?{params}" method="POST" onSubmit="return OnSubmit();">
+        <table cellspacing="0" cellpadding="0" border="0" class="Header">
+          <tr>
+            <td class="HeaderLeft" style="background-image: url('{img}/HeaderLeft.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+            <th>Album</th>
+            <td class="HeaderRight" style="background-image: url('{img}/HeaderRight.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+          </tr>
+        </table>
+<table class="Form" cellspacing="0" cellpadding="0">
+<input type="hidden" name="cmd" value="album_{cmd}">
+<tr class="Controls"><th>Title:</th><td><input name="title" value="{title}"></td></tr>
+
+<tr class="Footer"><td colspan="2">
+<!-- begin_album_bInsert --><input type="submit" value="Add"><!-- end_album_bInsert -->
+<!-- begin_album_bUpdate --><input type="submit" value="Update"><!-- end_album_bUpdate -->
+<input type="button" value="Cancel" onClick="location='albums.php?{params}';">
+<!-- begin_album_bDelete -->
+<input type="button" value="Delete" onClick="OnDelete();">
+<input type="button" value="FTP Sync." onClick="OnSync();">
+<!-- end_album_bDelete -->
+</td></tr>
+</table>
+</form>
+</td> 
+</tr>
+</table>
+
+<!-- end_album -->
+
+<br>
+
+<!-- begin_pic -->
+
+<table cellspacing="0" cellpadding="0" width="300" border="0">
+<script language="JavaScript">
+<!--
+function OnUpload()
+{
+	var sError = "";
+
+	sError += checkEmptyValue("Image", document.forms["image"].image.value);
+	if (document.forms["image"].image.value.length > 0)
+	{
+		var sExt = document.forms["image"].image.value;
+		var i = sExt.lastIndexOf('.');
+		if (i != -1)
+		{
+			sExt = sExt.substring(i).toLowerCase();
+		}
+		if (sExt != ".jpg" && sExt != ".jpeg" && sExt != ".swf")
+		{
+			sError += "\tIncorrect file type\n";
+		}
+	}
+
+	if (sError) {
+		alert("Warning:\n" + sError);
+		return false;
+	} else {
+		return true;
+	}
+}
+//-->
+</script>
+<tr>
+<td>
+<form name="image" action="album.php?{params}" method="post" enctype="multipart/form-data" onSubmit="return OnUpload();">
+        <table cellspacing="0" cellpadding="0" border="0" class="Header">
+          <tr>
+            <td class="HeaderLeft" style="background-image: url('{img}/HeaderLeft.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+            <th>Add picture</th>
+            <td class="HeaderRight" style="background-image: url('{img}/HeaderRight.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+          </tr>
+        </table>
+<table class="Form" cellspacing="0" cellpadding="0">
+<input type="hidden" name="cmd" value="pic_insert">
+<input type="hidden" name="MAX_FILE_SIZE" value="10485760">
+<tr class="Controls"><th>Title:</th><td><input name="title" value="{title}"></td></tr>
+<tr class="Controls"><th>Image:</th><td nowrap="nowrap"><input type="file" name="image" > &nbsp; (.jpg)</td></tr>
+
+<tr class="Footer"><td colspan="2">
+<input type="submit" value="Upload">
+</td></tr>
+</table>
+</form>
+</td> 
+</tr>
+</table>
+
+<!-- end_pic -->
+
+
+</td><td valign="top">
+
+
+<!-- begin_pics -->
+
+
+<script language="JavaScript">
+<!--
+function OnDelete()
+{
+	if (confirm("Are you sure you want to delete this album and all its pictures?"))
+	{
+		location='album.php?cmd=album_delete&{params}';
+	}
+}
+function OnSync()
+{
+	if (confirm("Are you sure you want to syncronize this album for new pictures uploaded via FTP?"))
+	{
+		location='album.php?cmd=sync&{params}';
+	}
+}
+function renamePic(picId, title)
+{
+	var strTitle = prompt("Rename the picture", title);
+	if (strTitle)
+		location='album.php?picId=' + picId + '&title=' + strTitle + '&cmd=pic_rename&{params}';
+}
+//-->
+</script>
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr>
+<td>
+        <table cellspacing="0" cellpadding="0" border="0" class="Header">
+          <tr>
+            <td class="HeaderLeft" style="background-image: url('{img}/HeaderLeft.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+            <th>Pictures</th>
+            <td class="HeaderRight" style="background-image: url('{img}/HeaderRight.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+          </tr>
+        </table>
+<table class="Form" cellspacing="0" cellpadding="0" border="0">
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;"><!-- begin_pics_pager -->
+<!-- begin_pics_first --><a href="{url}">First</a> <!-- end_pics_first -->
+<!-- begin_pics_prev --><a href="{url}">Prev.</a> <!-- end_pics_prev -->
+<!-- begin_pics_page -->
+<!-- begin_pics_link --><a href="{url}">{page}</a> <!-- end_pics_link -->
+<!-- begin_pics_curpage --><b>{page}</b> <!-- end_pics_curpage -->
+<!-- end_pics_page -->
+<!-- begin_pics_next --><a href="{url}">Next</a> <!-- end_pics_next -->
+<!-- begin_pics_last --><a href="{url}">Last</a> <!-- end_pics_last -->
+<!-- end_pics_pager --></td>
+		</TR>
+	</table>
+</td>
+</tr>
+
+<!-- begin_pics_begin -->
+<tr class="Row">
+<!-- end_pics_begin -->
+<!-- begin_pics_item -->
+<td align="center" nowrap>
+	<img border="0" alt="picture {picId}" src="../pics/{albumId}/small/{sFile}"><br />
+	{title}<br />
+	<a href="album.php?{params}&picId={picId}&cmd=pic_delete">delete</a>
+	<a href="javascript:renamePic({picId},'{title}');">rename</a>
+</td>
+<!-- begin_pics_newline -->
+</tr><tr class="Row">
+<!-- end_pics_newline -->
+<!-- end_pics_item -->
+
+<!-- begin_pics_end -->
+<!-- begin_pics_close -->
+<td colspan="{lostCells}">&nbsp;</td>
+<!-- end_pics_close -->
+</tr>
+<!-- end_pics_end -->
+
+<!-- begin_pics_noitems -->
+<tr class="NoRecords">
+<td colspan="18">No pictures</td>
+</tr>
+<!-- end_pics_noitems -->
+
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;">{pager2}</td>
+		</TR>
+	</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- end_pics -->
+
+</td></tr></table>
+
+</p>
+
+{iFooter}

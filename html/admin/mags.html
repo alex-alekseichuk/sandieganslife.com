@@ -1,0 +1,94 @@
+{iHeader}
+
+<p class="title">Magazines</p>
+
+<p align="center">
+
+<table border="0"><tr><td valign="top" width="500" align="center">
+
+<a class="Link" href="mag.php?{params}"><img src="{img}/bul.gif" border="0">Add Magazine</a>
+<br><br>
+
+<!-- begin_page_bMessage -->
+<p>
+<table border="0"><tr><td valign="top"><img alt="" src="{img}/info.gif" border="0">&nbsp;&nbsp;</td>
+<td valign="middle"><b>{sMessage}</b>
+</tr></table>
+</p>
+<br>
+<!-- end_page_bMessage -->
+
+
+
+<!-- begin_mags -->
+
+<table class="Form" cellspacing="0" cellpadding="0" border="0">
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;"><!-- begin_mags_pager -->
+<!-- begin_mags_first --><a href="{url}">First</a> <!-- end_mags_first -->
+<!-- begin_mags_prev --><a href="{url}">Prev.</a> <!-- end_mags_prev -->
+<!-- begin_mags_page -->
+<!-- begin_mags_link --><a href="{url}">{page}</a> <!-- end_mags_link -->
+<!-- begin_mags_curpage --><b>{page}</b> <!-- end_mags_curpage -->
+<!-- end_mags_page -->
+<!-- begin_mags_next --><a href="{url}">Next</a> <!-- end_mags_next -->
+<!-- begin_mags_last --><a href="{url}">Last</a> <!-- end_mags_last -->
+<!-- end_mags_pager --></td>
+		</TR>
+	</table>
+</td>
+</tr>
+<tr class="Caption">
+<td>
+	<!-- begin_mags_sort_magId --><a href="{url}">ID</a> 
+	<!-- begin_mags_asc_magId --><img border="0" src="{img}/asc.gif" /><!-- end_mags_asc_magId -->
+	<!-- begin_mags_desc_magId --><img border="0" src="{img}/desc.gif" /><!-- end_mags_desc_magId --><!-- end_mags_sort_magId --></td> 
+<td>
+	<!-- begin_mags_sort_title --><a href="{url}">Magazine</a> 
+	<!-- begin_mags_asc_title --><img border="0" src="{img}/asc.gif" /><!-- end_mags_asc_title -->
+	<!-- begin_mags_desc_title --><img border="0" src="{img}/desc.gif" /><!-- end_mags_desc_title --><!-- end_mags_sort_title --></td> 
+<td>
+	<!-- begin_mags_sort_pages --><a href="{url}">Pages</a> 
+	<!-- begin_mags_asc_pages --><img border="0" src="{img}/asc.gif" /><!-- end_mags_asc_pages -->
+	<!-- begin_mags_desc_pages --><img border="0" src="{img}/desc.gif" /><!-- end_mags_desc_pages --><!-- end_mags_sort_pages --></td> 
+<td>&nbsp;</td> 
+</tr>
+
+<!-- begin_mags_item -->
+<tr class="Row">
+<td><a href="mag.php?{params}&magId={magId}">{magId}</a></td>
+<td><a href="mag.php?{params}&magId={magId}">{title}</a>&nbsp;</td>
+<td align="right">{pages}&nbsp;</td>
+<td align="right"><a target="_blank" href="../viewer.php?magId={magId}">view</a></td>
+</tr>
+<!-- end_mags_item -->
+
+<!-- begin_mags_noitems -->
+<tr class="NoRecords">
+<td colspan="18">No records</td>
+</tr>
+<!-- end_mags_noitems -->
+<tr class="Info">
+<td colspan="16">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;">{pager2}</td>
+		</TR>
+	</table>
+</td>
+</tr>
+</table>
+
+<!-- end_mags -->
+
+
+</td>
+</tr>
+</table>
+
+</p>
+
+{iFooter}

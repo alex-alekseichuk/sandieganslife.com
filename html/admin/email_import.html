@@ -1,0 +1,29 @@
+{iHeader}
+
+<p class="title">Import/remove emails to the list</p>
+<div style="color: red;" align="center">{sMessage}</div>
+
+
+
+<table border="0" align="center">
+<form name="cat" action="email_import.php" method="post">
+<input type="hidden" name="cmd" value="update">
+<tr><td>
+
+Category <select name="catId" onChange="document.forms['cat'].cmd.value='refresh';document.forms['cat'].submit();">{catIdOptions}</select> 
+<br />
+<input type="submit" value="Update" /> <input type="Reset" value="Reset" />
+<input type="button" value="Remove Category" onClick="document.forms['cat'].cmd.value='removeCat';document.forms['cat'].submit();" />
+
+<br />
+
+New category
+<input type="text" name="title" value="" />
+<input type="button" value="Create" onClick="document.forms['cat'].cmd.value='createCat';document.forms['cat'].submit();" />
+
+</td></tr>
+<tr><td><textarea name="emails" rows="30" cols="50">{addrs}</textarea></td></tr>
+</form>
+</table>
+
+{iFooter}

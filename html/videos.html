@@ -1,0 +1,190 @@
+{iHeader}
+
+<script src="{img}/AC_QuickTime.js" language="JavaScript" type="text/javascript"></script>
+
+<table border="0">
+<tr>
+<td valign="top">
+<a href="index.php"><img src="{img}/logo.jpg" border="0"></a>
+</td>
+<td valign="top" width="50">&nbsp;</td>
+
+<td valign="top" >
+
+
+<br>
+<div class="Title">Video : {title}</div>
+<br>
+
+<p align="center">
+
+
+<table border="0"><tr><td valign="top">
+
+
+<!-- begin_bVideo -->
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td>
+        <table cellspacing="0" cellpadding="0" border="0" class="Header">
+          <tr>
+            <td class="HeaderLeft" style="background-image: url('{img}/HeaderLeft.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+            <th>View</th>
+            <td class="HeaderRight" style="background-image: url('{img}/HeaderRight.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+          </tr>
+        </table>
+<table class="Form" cellspacing="0" cellpadding="0">
+<tr class="Info"><td >
+
+<!-- begin_our -->
+<script language="JavaScript" type="text/javascript" >
+<!--
+	QT_WriteOBJECT("video/{sFile}", "{width}", "{height}", "",
+			"controller", "true",
+			"autoplay","true"
+ 	);
+//-->
+</script>
+<noscript>
+	<embed src="video/{sFile}?controller=true&autoplay=true" width="{width}" height="{height}" align="left"></embed>
+</noscript>
+<!-- end_our -->
+
+<!-- begin_youtube -->
+<object width="{width}" height="{height}">
+	<param name="movie" value="{link}"></param>
+	<param name="wmode" value="transparent"></param>
+	<embed src="{link}" type="application/x-shockwave-flash" wmode="transparent" width="{width}" height="{height}"></embed>
+</object>
+<!-- end_youtube -->
+
+
+</td></tr>
+<tr class="Info"><td style="white-space: normal; width: {width}px;">
+
+	{title}<br />
+	<!-- begin_bLink --><br/ ><a href="{link}" target="_blank"><img src="{img}/bul.gif" border="0">link</a><br /><!-- end_bLink -->
+
+</td></tr>
+</table>
+</td> 
+</tr>
+</table>
+<!-- end_bVideo -->
+
+
+</td><td valign="top">
+
+
+<!-- begin_videos -->
+
+
+<table cellspacing="0" cellpadding="0" width="300" border="0">
+<tr>
+<td>
+        <table cellspacing="0" cellpadding="0" border="0" class="Header">
+          <tr>
+            <td class="HeaderLeft" style="background-image: url('{img}/HeaderLeft.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+            <th>Video</th>
+            <td class="HeaderRight" style="background-image: url('{img}/HeaderRight.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+          </tr>
+        </table>
+<table class="Form" cellspacing="0" cellpadding="0" width="300" border="0">
+
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;"><!-- begin_videos_pager -->
+<!-- begin_videos_first --><a href="{url}">First</a> <!-- end_videos_first -->
+<!-- begin_videos_prev --><a href="{url}">Prev.</a> <!-- end_videos_prev -->
+<!-- begin_videos_page -->
+<!-- begin_videos_link --><a href="{url}">{page}</a> <!-- end_videos_link -->
+<!-- begin_videos_curpage --><b>{page}</b> <!-- end_videos_curpage -->
+<!-- end_videos_page -->
+<!-- begin_videos_next --><a href="{url}">Next</a> <!-- end_videos_next -->
+<!-- begin_videos_last --><a href="{url}">Last</a> <!-- end_videos_last -->
+<!-- end_videos_pager --></td>
+		</TR>
+	</table>
+</td>
+</tr>
+
+<!-- begin_videos_begin -->
+<tr class="Row">
+<!-- end_videos_begin -->
+
+<!-- begin_videos_item -->
+<td align="center">
+	<table border="0" class="Transp"><tr><td style="vetical-align: top; width: 100px;">
+
+<!-- begin_videos_bVideo -->
+	<a href="videos.php?videoId={videoId}&{params}"><img border="0" alt="{title}" src="video/thumbs/{sPic}" /></a>
+<!-- end_videos_bVideo -->
+<!-- begin_videos_bLogin -->
+	<a href="login.php"><img border="0" alt="{title}" src="video/thumbs/{sPic}" /></a>
+<!-- end_videos_bLogin -->
+
+	</td><td style="text-align: left; vertical-align: top; white-space: normal; padding: 5px;">
+	{title}
+	</td></tr></table>
+</td>
+<!-- begin_videos_newline -->
+</tr><tr class="Row">
+<!-- end_videos_newline -->
+<!-- end_videos_item -->
+
+<!-- begin_videos_end -->
+<!-- begin_videos_close -->
+<td colspan="{lostCells}">&nbsp;</td>
+<!-- end_videos_close -->
+</tr>
+<!-- end_videos_end -->
+
+<!-- begin_videos_noitems -->
+<tr class="NoRecords">
+<td colspan="18">No video</td>
+</tr>
+<!-- end_videos_noitems -->
+
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;">{pager2}</td>
+		</TR>
+	</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- end_videos -->
+
+</td></tr></table>
+
+</p>
+
+</td>
+</tr>
+</table>
+
+{iFooter}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

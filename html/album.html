@@ -1,0 +1,114 @@
+{iHeader}
+
+<table border="0">
+<tr>
+<td valign="top">
+<a href="index.php"><img src="{img}/logo.jpg" border="0"></a>
+</td>
+<td valign="top" width="50">&nbsp;</td>
+
+<td valign="top" >
+
+
+
+<br>
+<div class="Title">Gallery : {title}</div>
+<br>
+
+
+<p align="center">
+
+
+
+<br>
+
+
+<!-- begin_pics -->
+
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td>
+        <table cellspacing="0" cellpadding="0" border="0" class="Header">
+          <tr>
+            <td class="HeaderLeft" style="background-image: url('{img}/HeaderLeft.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+            <th>Pictures</th>
+            <td class="HeaderRight" style="background-image: url('{img}/HeaderRight.gif');"><img alt="" src="{img}/Spacer.gif" /></td> 
+          </tr>
+        </table>
+<table class="Form" cellspacing="0" cellpadding="0" border="0">
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;"><!-- begin_pics_pager -->
+<!-- begin_pics_first --><a href="{url}">First</a> <!-- end_pics_first -->
+<!-- begin_pics_prev --><a href="{url}">Prev.</a> <!-- end_pics_prev -->
+<!-- begin_pics_page -->
+<!-- begin_pics_link --><a href="{url}">{page}</a> <!-- end_pics_link -->
+<!-- begin_pics_curpage --><b>{page}</b> <!-- end_pics_curpage -->
+<!-- end_pics_page -->
+<!-- begin_pics_next --><a href="{url}">Next</a> <!-- end_pics_next -->
+<!-- begin_pics_last --><a href="{url}">Last</a> <!-- end_pics_last -->
+<!-- end_pics_pager --></td>
+		</TR>
+	</table>
+</td>
+</tr>
+
+<!-- begin_pics_begin -->
+<tr class="Row">
+<!-- end_pics_begin -->
+<!-- begin_pics_item -->
+<td align="center" nowrap>
+<!-- begin_pics_bPic -->
+	<a href="pics/{albumId}/{sFile}" target="pic_{picId}"><img border="0" alt="{title}" src="pics/{albumId}/small/{sFile}"></a>
+<!-- end_pics_bPic -->
+<!-- begin_pics_bLogin -->
+	<a href="login.php"><img border="0" alt="{title}" src="pics/{albumId}/small/{sFile}"></a>
+<!-- end_pics_bLogin -->
+	<br />
+	{title}<br />
+</td>
+<!-- begin_pics_newline -->
+</tr><tr class="Row">
+<!-- end_pics_newline -->
+<!-- end_pics_item -->
+
+<!-- begin_pics_end -->
+<!-- begin_pics_close -->
+<td colspan="{lostCells}">&nbsp;</td>
+<!-- end_pics_close -->
+</tr>
+<!-- end_pics_end -->
+
+<!-- begin_pics_noitems -->
+<tr class="NoRecords">
+<td colspan="18">No pictures</td>
+</tr>
+<!-- end_pics_noitems -->
+
+<tr class="Info">
+<td colspan="18">
+	<TABLE class="Transp" cellspacing="0" cellpadding="0" border="0">
+        <TR>
+          <TD>{info}</td><td style="text-align: right;">{pager2}</td>
+		</TR>
+	</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- end_pics -->
+
+
+</p>
+
+</td>
+</tr>
+</table>
+
+{iFooter}
